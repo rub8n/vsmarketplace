@@ -7,6 +7,7 @@ import MarketplaceWalkthrough from './components/MarketplaceWalkthrough.vue'
 import PreviewAnnouncement from './components/PreviewAnnouncement.vue'
 import ReleaseChannel from './components/ReleaseChannel.vue'
 import PreviewIndex from './components/ChannelQuickstarts.vue'
+import './design-tokens.css'
 import './custom.css'
 
 export default {

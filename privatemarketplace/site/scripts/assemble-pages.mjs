@@ -14,6 +14,7 @@ await cp(distDirectory, path.join(pagesDirectory, 'privatemarketplace'), { recur
 
 const readme = await readFile(path.join(repositoryRoot, 'README.md'), 'utf8')
 const content = await marked.parse(readme)
+const designTokens = await readFile(path.join(siteDirectory, '.vitepress', 'theme', 'design-tokens.css'), 'utf8')
 const stylesheet = await readFile(path.join(siteDirectory, 'scripts', 'repository-landing.css'), 'utf8')
 const page = `<!doctype html>
 <html lang="en">
@@ -22,7 +23,8 @@ const page = `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Visual Studio Marketplace feedback and Private Marketplace documentation.">
     <title>vsmarketplace | Feedback and documentation</title>
-    <style>${stylesheet}</style>
+    <style>${designTokens}
+${stylesheet}</style>
   </head>
   <body>
     <header class="site-header">
